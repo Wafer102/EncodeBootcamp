@@ -17,10 +17,8 @@ const contract = new ethers.Contract(contractAddress, ABI, wallet);
 
 async function interactWithContract() {
   try {
-    const functionName = 'vote';
-    const functionArgs = [1];
 
-    const tx = await contract[functionName](...functionArgs);
+    const tx = await contract['vote'](1);
 
     console.log(`Transaction hash: ${tx.hash}`);
 
